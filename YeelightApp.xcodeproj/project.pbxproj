@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7802BD2927A426F200AAF413 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802BD2827A426F200AAF413 /* AppDelegate.swift */; };
+		7802BD2D27A426F200AAF413 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802BD2C27A426F200AAF413 /* ViewController.swift */; };
+		7802BD3027A426F200AAF413 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7802BD2E27A426F200AAF413 /* Main.storyboard */; };
+		7802BD3227A426F500AAF413 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7802BD3127A426F500AAF413 /* Assets.xcassets */; };
+		7802BD3527A426F500AAF413 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7802BD3327A426F500AAF413 /* LaunchScreen.storyboard */; };
+		7802BD3D27A4273600AAF413 /* YeelightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802BD3C27A4273600AAF413 /* YeelightService.swift */; };
+		7802BD4927A4395D00AAF413 /* CocoaAsyncSocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7802BD4827A4395D00AAF413 /* CocoaAsyncSocket.xcframework */; };
+		7802BD4A27A4395D00AAF413 /* CocoaAsyncSocket.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7802BD4827A4395D00AAF413 /* CocoaAsyncSocket.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7802BD4D27A4470000AAF413 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802BD4C27A4470000AAF413 /* ServiceFactory.swift */; };
+		7802BD4F27A4478D00AAF413 /* DiscoverYeelightDevicesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802BD4E27A4478D00AAF413 /* DiscoverYeelightDevicesService.swift */; };
+		7802BD5227A44A0800AAF413 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802BD5127A44A0800AAF413 /* Device.swift */; };
+		7802BD5A27A83F9C00AAF413 /* DeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802BD5927A83F9C00AAF413 /* DeviceViewModel.swift */; };
+		7802BD5C27A8585900AAF413 /* DiscoverDevicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802BD5B27A8585900AAF413 /* DiscoverDevicesViewController.swift */; };
+		7802BD5E27A85A3600AAF413 /* ChainableLayout.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7802BD5D27A85A3600AAF413 /* ChainableLayout.xcframework */; };
+		7802BD5F27A85A3600AAF413 /* ChainableLayout.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7802BD5D27A85A3600AAF413 /* ChainableLayout.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7802BD6127A85DB700AAF413 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802BD6027A85DB700AAF413 /* DeviceViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7802BD4B27A4395D00AAF413 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7802BD4A27A4395D00AAF413 /* CocoaAsyncSocket.xcframework in Embed Frameworks */,
+				7802BD5F27A85A3600AAF413 /* ChainableLayout.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7802BD2527A426F200AAF413 /* YeelightApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YeelightApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7802BD2827A426F200AAF413 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7802BD2C27A426F200AAF413 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7802BD2F27A426F200AAF413 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7802BD3127A426F500AAF413 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7802BD3427A426F500AAF413 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7802BD3627A426F500AAF413 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7802BD3C27A4273600AAF413 /* YeelightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeelightService.swift; sourceTree = "<group>"; };
+		7802BD4827A4395D00AAF413 /* CocoaAsyncSocket.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CocoaAsyncSocket.xcframework; path = YeelightApp/Carthage/Build/CocoaAsyncSocket.xcframework; sourceTree = "<group>"; };
+		7802BD4C27A4470000AAF413 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		7802BD4E27A4478D00AAF413 /* DiscoverYeelightDevicesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverYeelightDevicesService.swift; sourceTree = "<group>"; };
+		7802BD5127A44A0800AAF413 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		7802BD5927A83F9C00AAF413 /* DeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewModel.swift; sourceTree = "<group>"; };
+		7802BD5B27A8585900AAF413 /* DiscoverDevicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverDevicesViewController.swift; sourceTree = "<group>"; };
+		7802BD5D27A85A3600AAF413 /* ChainableLayout.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ChainableLayout.xcframework; path = YeelightApp/Carthage/Build/ChainableLayout.xcframework; sourceTree = "<group>"; };
+		7802BD6027A85DB700AAF413 /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7802BD2227A426F200AAF413 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7802BD4927A4395D00AAF413 /* CocoaAsyncSocket.xcframework in Frameworks */,
+				7802BD5E27A85A3600AAF413 /* ChainableLayout.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7802BD1C27A426F200AAF413 = {
+			isa = PBXGroup;
+			children = (
+				7802BD2727A426F200AAF413 /* YeelightApp */,
+				7802BD2627A426F200AAF413 /* Products */,
+				7802BD4727A4395D00AAF413 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7802BD2627A426F200AAF413 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7802BD2527A426F200AAF413 /* YeelightApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7802BD2727A426F200AAF413 /* YeelightApp */ = {
+			isa = PBXGroup;
+			children = (
+				7802BD2827A426F200AAF413 /* AppDelegate.swift */,
+				7802BD2C27A426F200AAF413 /* ViewController.swift */,
+				7802BD5B27A8585900AAF413 /* DiscoverDevicesViewController.swift */,
+				7802BD6027A85DB700AAF413 /* DeviceViewController.swift */,
+				7802BD5027A447B700AAF413 /* Models */,
+				7802BD3E27A4276300AAF413 /* Service */,
+				7802BD2E27A426F200AAF413 /* Main.storyboard */,
+				7802BD3127A426F500AAF413 /* Assets.xcassets */,
+				7802BD3327A426F500AAF413 /* LaunchScreen.storyboard */,
+				7802BD3627A426F500AAF413 /* Info.plist */,
+			);
+			path = YeelightApp;
+			sourceTree = "<group>";
+		};
+		7802BD3E27A4276300AAF413 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7802BD4C27A4470000AAF413 /* ServiceFactory.swift */,
+				7802BD3C27A4273600AAF413 /* YeelightService.swift */,
+				7802BD4E27A4478D00AAF413 /* DiscoverYeelightDevicesService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7802BD4727A4395D00AAF413 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7802BD5D27A85A3600AAF413 /* ChainableLayout.xcframework */,
+				7802BD4827A4395D00AAF413 /* CocoaAsyncSocket.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7802BD5027A447B700AAF413 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7802BD5127A44A0800AAF413 /* Device.swift */,
+				7802BD5927A83F9C00AAF413 /* DeviceViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7802BD2427A426F200AAF413 /* YeelightApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7802BD3927A426F500AAF413 /* Build configuration list for PBXNativeTarget "YeelightApp" */;
+			buildPhases = (
+				7802BD2127A426F200AAF413 /* Sources */,
+				7802BD2227A426F200AAF413 /* Frameworks */,
+				7802BD2327A426F200AAF413 /* Resources */,
+				7802BD4B27A4395D00AAF413 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YeelightApp;
+			productName = YeelightApp;
+			productReference = 7802BD2527A426F200AAF413 /* YeelightApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7802BD1D27A426F200AAF413 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					7802BD2427A426F200AAF413 = {
+						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
+					};
+				};
+			};
+			buildConfigurationList = 7802BD2027A426F200AAF413 /* Build configuration list for PBXProject "YeelightApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7802BD1C27A426F200AAF413;
+			productRefGroup = 7802BD2627A426F200AAF413 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7802BD2427A426F200AAF413 /* YeelightApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7802BD2327A426F200AAF413 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7802BD3527A426F500AAF413 /* LaunchScreen.storyboard in Resources */,
+				7802BD3227A426F500AAF413 /* Assets.xcassets in Resources */,
+				7802BD3027A426F200AAF413 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7802BD2127A426F200AAF413 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7802BD4D27A4470000AAF413 /* ServiceFactory.swift in Sources */,
+				7802BD4F27A4478D00AAF413 /* DiscoverYeelightDevicesService.swift in Sources */,
+				7802BD3D27A4273600AAF413 /* YeelightService.swift in Sources */,
+				7802BD5227A44A0800AAF413 /* Device.swift in Sources */,
+				7802BD2D27A426F200AAF413 /* ViewController.swift in Sources */,
+				7802BD5A27A83F9C00AAF413 /* DeviceViewModel.swift in Sources */,
+				7802BD2927A426F200AAF413 /* AppDelegate.swift in Sources */,
+				7802BD5C27A8585900AAF413 /* DiscoverDevicesViewController.swift in Sources */,
+				7802BD6127A85DB700AAF413 /* DeviceViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7802BD2E27A426F200AAF413 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7802BD2F27A426F200AAF413 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7802BD3327A426F500AAF413 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7802BD3427A426F500AAF413 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7802BD3727A426F500AAF413 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7802BD3827A426F500AAF413 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7802BD3A27A426F500AAF413 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YeelightApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fkrasnovid.YeelightApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7802BD3B27A426F500AAF413 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YeelightApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fkrasnovid.YeelightApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7802BD2027A426F200AAF413 /* Build configuration list for PBXProject "YeelightApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7802BD3727A426F500AAF413 /* Debug */,
+				7802BD3827A426F500AAF413 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7802BD3927A426F500AAF413 /* Build configuration list for PBXNativeTarget "YeelightApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7802BD3A27A426F500AAF413 /* Debug */,
+				7802BD3B27A426F500AAF413 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7802BD1D27A426F200AAF413 /* Project object */;
+}
