@@ -10,7 +10,6 @@ final class DiscoverYeelightDevicesService: NSObject {
 	private let host: String
 	private let port: UInt16
 	private let socket: GCDAsyncUdpSocket
-	private var deviceSocketID = 1
 
 	public var didDiscoverDevice: ((Device) -> Void)?
 
@@ -62,7 +61,6 @@ extension DiscoverYeelightDevicesService: GCDAsyncUdpSocketDelegate {
 			content.contains("id") && content.contains("yeelight://") && content.contains("model")
 		else { return }
 
-		didDiscoverDevice?(Device(with: convert(content), socketID: deviceSocketID))
-		deviceSocketID += 1
+		didDiscoverDevice?(Device(with: convert(content)))
 	}
 }

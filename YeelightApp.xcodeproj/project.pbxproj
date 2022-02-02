@@ -12,7 +12,7 @@
 		7802BD3027A426F200AAF413 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7802BD2E27A426F200AAF413 /* Main.storyboard */; };
 		7802BD3227A426F500AAF413 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7802BD3127A426F500AAF413 /* Assets.xcassets */; };
 		7802BD3527A426F500AAF413 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7802BD3327A426F500AAF413 /* LaunchScreen.storyboard */; };
-		7802BD3D27A4273600AAF413 /* YeelightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802BD3C27A4273600AAF413 /* YeelightService.swift */; };
+		7802BD3D27A4273600AAF413 /* CommandReceiverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802BD3C27A4273600AAF413 /* CommandReceiverService.swift */; };
 		7802BD4927A4395D00AAF413 /* CocoaAsyncSocket.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7802BD4827A4395D00AAF413 /* CocoaAsyncSocket.xcframework */; };
 		7802BD4A27A4395D00AAF413 /* CocoaAsyncSocket.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7802BD4827A4395D00AAF413 /* CocoaAsyncSocket.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7802BD4D27A4470000AAF413 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802BD4C27A4470000AAF413 /* ServiceFactory.swift */; };
@@ -23,6 +23,12 @@
 		7802BD5E27A85A3600AAF413 /* ChainableLayout.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7802BD5D27A85A3600AAF413 /* ChainableLayout.xcframework */; };
 		7802BD5F27A85A3600AAF413 /* ChainableLayout.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7802BD5D27A85A3600AAF413 /* ChainableLayout.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7802BD6127A85DB700AAF413 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802BD6027A85DB700AAF413 /* DeviceViewController.swift */; };
+		781C7B6227AAB86F008E1534 /* DeviceCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B6127AAB86F008E1534 /* DeviceCommand.swift */; };
+		781C7B6727AAB908008E1534 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B6627AAB908008E1534 /* Effect.swift */; };
+		781C7B6927AAB916008E1534 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B6827AAB916008E1534 /* Duration.swift */; };
+		781C7B6D27AAEC20008E1534 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B6C27AAEC20008E1534 /* Mode.swift */; };
+		781C7B6F27AAEC3E008E1534 /* PowerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B6E27AAEC3E008E1534 /* PowerState.swift */; };
+		781C7B7127AAEC75008E1534 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7027AAEC75008E1534 /* Array+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,7 +54,7 @@
 		7802BD3127A426F500AAF413 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7802BD3427A426F500AAF413 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7802BD3627A426F500AAF413 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7802BD3C27A4273600AAF413 /* YeelightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeelightService.swift; sourceTree = "<group>"; };
+		7802BD3C27A4273600AAF413 /* CommandReceiverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandReceiverService.swift; sourceTree = "<group>"; };
 		7802BD4827A4395D00AAF413 /* CocoaAsyncSocket.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CocoaAsyncSocket.xcframework; path = YeelightApp/Carthage/Build/CocoaAsyncSocket.xcframework; sourceTree = "<group>"; };
 		7802BD4C27A4470000AAF413 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		7802BD4E27A4478D00AAF413 /* DiscoverYeelightDevicesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverYeelightDevicesService.swift; sourceTree = "<group>"; };
@@ -57,6 +63,12 @@
 		7802BD5B27A8585900AAF413 /* DiscoverDevicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverDevicesViewController.swift; sourceTree = "<group>"; };
 		7802BD5D27A85A3600AAF413 /* ChainableLayout.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ChainableLayout.xcframework; path = YeelightApp/Carthage/Build/ChainableLayout.xcframework; sourceTree = "<group>"; };
 		7802BD6027A85DB700AAF413 /* DeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
+		781C7B6127AAB86F008E1534 /* DeviceCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCommand.swift; sourceTree = "<group>"; };
+		781C7B6627AAB908008E1534 /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
+		781C7B6827AAB916008E1534 /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		781C7B6C27AAEC20008E1534 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		781C7B6E27AAEC3E008E1534 /* PowerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerState.swift; sourceTree = "<group>"; };
+		781C7B7027AAEC75008E1534 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,7 @@
 				7802BD2C27A426F200AAF413 /* ViewController.swift */,
 				7802BD5B27A8585900AAF413 /* DiscoverDevicesViewController.swift */,
 				7802BD6027A85DB700AAF413 /* DeviceViewController.swift */,
+				781C7B6027AAB859008E1534 /* Command */,
 				7802BD5027A447B700AAF413 /* Models */,
 				7802BD3E27A4276300AAF413 /* Service */,
 				7802BD2E27A426F200AAF413 /* Main.storyboard */,
@@ -110,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				7802BD4C27A4470000AAF413 /* ServiceFactory.swift */,
-				7802BD3C27A4273600AAF413 /* YeelightService.swift */,
+				7802BD3C27A4273600AAF413 /* CommandReceiverService.swift */,
 				7802BD4E27A4478D00AAF413 /* DiscoverYeelightDevicesService.swift */,
 			);
 			path = Service;
@@ -132,6 +145,27 @@
 				7802BD5927A83F9C00AAF413 /* DeviceViewModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		781C7B6027AAB859008E1534 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				781C7B6127AAB86F008E1534 /* DeviceCommand.swift */,
+				781C7B6627AAB908008E1534 /* Effect.swift */,
+				781C7B6827AAB916008E1534 /* Duration.swift */,
+				781C7B6C27AAEC20008E1534 /* Mode.swift */,
+				781C7B6E27AAEC3E008E1534 /* PowerState.swift */,
+				781C7B6527AAB8F4008E1534 /* Extensions */,
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
+		781C7B6527AAB8F4008E1534 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				781C7B7027AAEC75008E1534 /* Array+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,12 +241,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				781C7B6727AAB908008E1534 /* Effect.swift in Sources */,
 				7802BD4D27A4470000AAF413 /* ServiceFactory.swift in Sources */,
+				781C7B6227AAB86F008E1534 /* DeviceCommand.swift in Sources */,
 				7802BD4F27A4478D00AAF413 /* DiscoverYeelightDevicesService.swift in Sources */,
-				7802BD3D27A4273600AAF413 /* YeelightService.swift in Sources */,
+				781C7B6927AAB916008E1534 /* Duration.swift in Sources */,
+				7802BD3D27A4273600AAF413 /* CommandReceiverService.swift in Sources */,
 				7802BD5227A44A0800AAF413 /* Device.swift in Sources */,
+				781C7B6F27AAEC3E008E1534 /* PowerState.swift in Sources */,
 				7802BD2D27A426F200AAF413 /* ViewController.swift in Sources */,
 				7802BD5A27A83F9C00AAF413 /* DeviceViewModel.swift in Sources */,
+				781C7B6D27AAEC20008E1534 /* Mode.swift in Sources */,
+				781C7B7127AAEC75008E1534 /* Array+.swift in Sources */,
 				7802BD2927A426F200AAF413 /* AppDelegate.swift in Sources */,
 				7802BD5C27A8585900AAF413 /* DiscoverDevicesViewController.swift in Sources */,
 				7802BD6127A85DB700AAF413 /* DeviceViewController.swift in Sources */,

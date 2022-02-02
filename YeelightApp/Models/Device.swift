@@ -1,10 +1,3 @@
-//
-//  Device.swift
-//  YeelightApp
-//
-//  Created by Filipp K on 28.01.2022.
-//
-
 import Foundation
 
 public enum Method: String, Encodable {
@@ -69,10 +62,8 @@ public final class Device: Equatable {
 	public let fw_ver: String
 	public var color_mode: Int
 	public let supportMethods: [Method]
-	public let socketID: Int
 
-	init(with dictionary: [String: String], socketID: Int) {
-		self.socketID = socketID
+	init(with dictionary: [String: String]) {
 		self.location = dictionary["location"] ?? ""
 
 		let hostport = self.location

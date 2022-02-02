@@ -1,16 +1,9 @@
-//
-//  YeelightService.swift
-//  YeelightApp
-//
-//  Created by Filipp K on 28.01.2022.
-//
-
 import CocoaAsyncSocket
 
 public protocol CommandReceiver: AnyObject {
 	func connect(to host: String, port: UInt16, completion: ((Bool) -> Void)?)
 	func disconnect()
-	func sendCommand(_ command: AbstractCommand)
+	func sendCommand(_ command: DeviceCommand)
 }
 
 public final class CommandReceiverService: NSObject, GCDAsyncSocketDelegate {
@@ -37,7 +30,7 @@ extension CommandReceiverService: CommandReceiver {
 		tcpSocket.disconnect()
 	}
 
-	public func sendCommand(_ command: AbstractCommand) {
-		tcpSocket.write(command.toData, withTimeout: 3, tag: 0)
+	public func sendCommand(_ command: DeviceCommand) {
+		tcpSocket.write(command.data, withTimeout: 3, tag: 0)
 	}
 }

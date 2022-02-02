@@ -1,10 +1,3 @@
-//
-//  ServiceFactory.swift
-//  YeelightApp
-//
-//  Created by Filipp K on 28.01.2022.
-//
-
 import CocoaAsyncSocket
 
 public final class ServiceFactory {
