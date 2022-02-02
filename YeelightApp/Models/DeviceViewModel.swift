@@ -69,4 +69,9 @@ extension DeviceViewModel {
 		receiver.sendCommand(.set_bright(brightness: bright))
 		self.bright = bright
 	}
+
+	func setName(_ name: String) {
+		receiver.sendCommand(.set_name(name: name))
+		self.name = name
+	}
 }

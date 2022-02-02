@@ -8,6 +8,9 @@ public enum DeviceCommand {
 	/// brightness is a percentage instead of a absolute value. 100 means maximum brightness while 1 means the minimum brightness.
 	case set_bright(brightness: Int, effect: Effect = .smooth, duration: Duration = .milliseconds(500))
 
+	/// This method is used to name the device. The name will be stored on the device and reported in discovering response
+	case set_name(name: String)
+
 	public var data: Data {
 		guard
 			let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted),
@@ -31,6 +34,7 @@ public enum DeviceCommand {
 		case .set_power: return "set_power"
 		case .set_default: return "set_default"
 		case .set_bright: return "set_bright"
+		case .set_name: return "set_name"
 		}
 	}
 
@@ -43,6 +47,8 @@ public enum DeviceCommand {
 			return []
 		case let .set_bright(brightness, effect, duration):
 			return [brightness, effect.rawValue, duration.value]
+		case let .set_name(name):
+			return [name]
 		}
 	}
 }
