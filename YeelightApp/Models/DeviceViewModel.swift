@@ -74,4 +74,14 @@ extension DeviceViewModel {
 		receiver.sendCommand(.set_name(name: name))
 		self.name = name
 	}
+
+	func setRgb(_ rgb: Int) {
+		receiver.sendCommand(.set_rgb(rgb: rgb))
+		self.rgb = rgb
+	}
+
+	func setCt(_ ct: Int) {
+		receiver.sendCommand(.set_ct_abx(ct: ct))
+		self.ct = ct
+	}
 }

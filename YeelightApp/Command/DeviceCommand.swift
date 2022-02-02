@@ -11,6 +11,12 @@ public enum DeviceCommand {
 	/// This method is used to name the device. The name will be stored on the device and reported in discovering response
 	case set_name(name: String)
 
+	/// This method is used to change the color of a smart LED.
+	case set_rgb(rgb: Int, effect: Effect = .smooth, duration: Duration = .milliseconds(500))
+
+	/// This method is used to change the color temperature of a smart LED.
+	case set_ct_abx(ct: Int, effect: Effect = .smooth, duration: Duration = .milliseconds(500))
+
 	public var data: Data {
 		guard
 			let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted),
@@ -35,6 +41,8 @@ public enum DeviceCommand {
 		case .set_default: return "set_default"
 		case .set_bright: return "set_bright"
 		case .set_name: return "set_name"
+		case .set_rgb: return "set_rgb"
+		case .set_ct_abx: return "set_ct_abx"
 		}
 	}
 
@@ -49,6 +57,10 @@ public enum DeviceCommand {
 			return [brightness, effect.rawValue, duration.value]
 		case let .set_name(name):
 			return [name]
+		case let .set_rgb(rgb, effect, duration):
+			return [rgb, effect.rawValue, duration.value]
+		case let .set_ct_abx(ct, effect, duration):
+			return [ct, effect.rawValue, duration.value]
 		}
 	}
 }

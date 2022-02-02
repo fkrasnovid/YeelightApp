@@ -46,7 +46,29 @@ final class DevicesViewController: UIViewController {
 		slider.value = Float(deviceViewModel.bright)
 		slider.addTarget(self, action: #selector(sliderAction), for: .valueChanged)
 
+		let labelbrt = UILabel()
+		labelbrt.text = "bright"
+		stack.addArrangedSubview(labelbrt)
 		stack.addArrangedSubview(slider)
+
+
+		let view3 = UIView()
+		view3.backgroundColor = .brown
+		view3.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setRgb)))
+		stack.addArrangedSubview(view3)
+
+		let labelct = UILabel()
+		labelct.text = "ct"
+		stack.addArrangedSubview(labelct)
+
+		let slider2 = UISlider()
+		slider2.minimumValue = 1700
+		slider2.maximumValue = 6500
+		slider2.isContinuous = false
+		slider2.value = Float(deviceViewModel.ct)
+		slider2.addTarget(self, action: #selector(sliderAction2), for: .valueChanged)
+		stack.addArrangedSubview(slider2)
+
 	}
 
 	@objc func toggle() {
@@ -54,8 +76,18 @@ final class DevicesViewController: UIViewController {
 	}
 
 	@objc func sliderAction(sender: UISlider) {
-		guard deviceViewModel.bright != Int(sender.value) else { return }
+		guard deviceViewModel.ct != Int(sender.value) else { return }
 		print(Int(sender.value))
 		deviceViewModel.setBright(Int(sender.value))
+	}
+
+	@objc func sliderAction2(sender: UISlider) {
+		guard deviceViewModel.ct != Int(sender.value) else { return }
+		print(Int(sender.value))
+		deviceViewModel.setCt(Int(sender.value))
+	}
+
+	@objc func setRgb() {
+		deviceViewModel.setRgb(0xAF94E1)
 	}
 }
