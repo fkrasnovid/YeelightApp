@@ -30,6 +30,8 @@
 		781C7B6F27AAEC3E008E1534 /* PowerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B6E27AAEC3E008E1534 /* PowerState.swift */; };
 		781C7B7127AAEC75008E1534 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7027AAEC75008E1534 /* Array+.swift */; };
 		781C7B7327ABC3AB008E1534 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7227ABC3AB008E1534 /* ColorPalette.swift */; };
+		781C7B7527AC06B4008E1534 /* AdjustAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7427AC06B4008E1534 /* AdjustAction.swift */; };
+		781C7B7727AC082C008E1534 /* AdjustProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7627AC082C008E1534 /* AdjustProperty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +73,8 @@
 		781C7B6E27AAEC3E008E1534 /* PowerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerState.swift; sourceTree = "<group>"; };
 		781C7B7027AAEC75008E1534 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		781C7B7227ABC3AB008E1534 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		781C7B7427AC06B4008E1534 /* AdjustAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustAction.swift; sourceTree = "<group>"; };
+		781C7B7627AC082C008E1534 /* AdjustProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustProperty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 				781C7B6127AAB86F008E1534 /* DeviceCommand.swift */,
 				781C7B6627AAB908008E1534 /* Effect.swift */,
 				781C7B6827AAB916008E1534 /* Duration.swift */,
+				781C7B7427AC06B4008E1534 /* AdjustAction.swift */,
+				781C7B7627AC082C008E1534 /* AdjustProperty.swift */,
 				781C7B6C27AAEC20008E1534 /* PowerMode.swift */,
 				781C7B6E27AAEC3E008E1534 /* PowerState.swift */,
 				781C7B6527AAB8F4008E1534 /* Extensions */,
@@ -257,7 +263,9 @@
 				781C7B6D27AAEC20008E1534 /* PowerMode.swift in Sources */,
 				781C7B7327ABC3AB008E1534 /* ColorPalette.swift in Sources */,
 				781C7B7127AAEC75008E1534 /* Array+.swift in Sources */,
+				781C7B7727AC082C008E1534 /* AdjustProperty.swift in Sources */,
 				7802BD2927A426F200AAF413 /* AppDelegate.swift in Sources */,
+				781C7B7527AC06B4008E1534 /* AdjustAction.swift in Sources */,
 				7802BD5C27A8585900AAF413 /* DiscoverDevicesViewController.swift in Sources */,
 				7802BD6127A85DB700AAF413 /* DeviceViewController.swift in Sources */,
 			);

@@ -67,6 +67,13 @@ public enum DeviceCommand {
 	///   - type: Currently can only be 0. (means power off)
 	case cron_del(type: Int = 0)
 
+	/// This method is used to change brightness, CT or color of a smart LED without knowing the current value, it's main used by controllers.
+	/// When property is color, the action can only be circle, otherwise, it will be deemed as invalid request.
+	/// - Parameters:
+	///   - action: Target direction of the adjustment.
+	///   - property: Target property to adjust.
+	case set_adjust(action: AdjustAction, property: AdjustProperty)
+
 	public var data: Data {
 		guard
 			let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted),
@@ -98,6 +105,7 @@ public enum DeviceCommand {
 		case .cron_add: return "cron_add"
 		case .cron_get: return "cron_get"
 		case .cron_del: return "cron_del"
+		case .set_adjust: return "set_adjust"
 		}
 	}
 
@@ -122,6 +130,8 @@ public enum DeviceCommand {
 			return [type, value]
 		case let .cron_get(type), let .cron_del(type):
 			return [type]
+		case let .set_adjust(action, property):
+			return [action.rawValue, property.rawValue]
 		}
 	}
 }
