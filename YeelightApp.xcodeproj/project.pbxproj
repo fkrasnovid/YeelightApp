@@ -33,6 +33,9 @@
 		781C7B7527AC06B4008E1534 /* AdjustAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7427AC06B4008E1534 /* AdjustAction.swift */; };
 		781C7B7727AC082C008E1534 /* AdjustProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7627AC082C008E1534 /* AdjustProperty.swift */; };
 		781C7B7927AC0C32008E1534 /* MusicState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7827AC0C32008E1534 /* MusicState.swift */; };
+		781C7B7B27AC287B008E1534 /* ColorFlowState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7A27AC287B008E1534 /* ColorFlowState.swift */; };
+		781C7B7D27AC289A008E1534 /* ColorFlowAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7C27AC289A008E1534 /* ColorFlowAction.swift */; };
+		781C7B7F27AC28D3008E1534 /* ColorFlowExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7E27AC28D3008E1534 /* ColorFlowExpression.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +80,9 @@
 		781C7B7427AC06B4008E1534 /* AdjustAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustAction.swift; sourceTree = "<group>"; };
 		781C7B7627AC082C008E1534 /* AdjustProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustProperty.swift; sourceTree = "<group>"; };
 		781C7B7827AC0C32008E1534 /* MusicState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicState.swift; sourceTree = "<group>"; };
+		781C7B7A27AC287B008E1534 /* ColorFlowState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFlowState.swift; sourceTree = "<group>"; };
+		781C7B7C27AC289A008E1534 /* ColorFlowAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFlowAction.swift; sourceTree = "<group>"; };
+		781C7B7E27AC28D3008E1534 /* ColorFlowExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFlowExpression.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				781C7B6127AAB86F008E1534 /* DeviceCommand.swift */,
+				781C7B7E27AC28D3008E1534 /* ColorFlowExpression.swift */,
+				781C7B7A27AC287B008E1534 /* ColorFlowState.swift */,
+				781C7B7C27AC289A008E1534 /* ColorFlowAction.swift */,
 				781C7B6627AAB908008E1534 /* Effect.swift */,
 				781C7B6827AAB916008E1534 /* Duration.swift */,
 				781C7B7427AC06B4008E1534 /* AdjustAction.swift */,
@@ -256,8 +265,11 @@
 				781C7B6727AAB908008E1534 /* Effect.swift in Sources */,
 				7802BD4D27A4470000AAF413 /* ServiceFactory.swift in Sources */,
 				781C7B7927AC0C32008E1534 /* MusicState.swift in Sources */,
+				781C7B7B27AC287B008E1534 /* ColorFlowState.swift in Sources */,
 				781C7B6227AAB86F008E1534 /* DeviceCommand.swift in Sources */,
 				7802BD4F27A4478D00AAF413 /* DiscoverYeelightDevicesService.swift in Sources */,
+				781C7B7D27AC289A008E1534 /* ColorFlowAction.swift in Sources */,
+				781C7B7F27AC28D3008E1534 /* ColorFlowExpression.swift in Sources */,
 				781C7B6927AAB916008E1534 /* Duration.swift in Sources */,
 				7802BD3D27A4273600AAF413 /* CommandReceiverService.swift in Sources */,
 				7802BD5227A44A0800AAF413 /* Device.swift in Sources */,

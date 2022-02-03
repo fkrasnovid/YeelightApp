@@ -96,6 +96,13 @@ public enum DeviceCommand {
 	///   - duration: Specifies the total time of the gradual changing. The minimum support duration is 30 milliseconds. Default value .milliseconds(500)
 	case adjust_color(percentage: Int, duration: Duration = .milliseconds(500))
 
+	/// This method is used to start a color flow.
+	/// Color flow is a series of smart LED visible state changing. It can be brightness changing, color changing or color temperature changing.
+	case start_cf(state: ColorFlowState, action: ColorFlowAction, exp: ColorFlowExpression)
+
+	/// This method is used to stop a running color flow.
+	case stop_cf
+
 	public var data: Data {
 		guard
 			let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted),
@@ -132,6 +139,8 @@ public enum DeviceCommand {
 		case .adjust_bright: return "adjust_bright"
 		case .adjust_ct: return "adjust_ct"
 		case .adjust_color: return "adjust_color"
+		case .start_cf: return "start_cf"
+		case .stop_cf: return "stop_cf"
 		}
 	}
 
@@ -140,7 +149,7 @@ public enum DeviceCommand {
 		case let .set_power(state, duration, effect, mode):
 			var temp: [Any] = [state.rawValue, effect.rawValue, duration.value]
 			return temp.optionalAppend(mode?.rawValue)
-		case .set_default, .toggle:
+		case .set_default, .toggle, .stop_cf:
 			return []
 		case let .set_bright(brightness, effect, duration):
 			return [brightness, effect.rawValue, duration.value]
@@ -164,6 +173,8 @@ public enum DeviceCommand {
 			return temp
 		case let .adjust_bright(percentage, duration), let .adjust_ct(percentage, duration), let .adjust_color(percentage, duration):
 			return [percentage, duration.value]
+		case let .start_cf(state, action, exp):
+			return [state.value, action.rawValue, exp.toFormat]
 		}
 	}
 }
