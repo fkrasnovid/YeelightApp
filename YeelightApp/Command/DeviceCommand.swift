@@ -10,7 +10,7 @@ public enum DeviceCommand {
 	///   - mode: Target mode value(optional). Default value nil
 	case set_power(state: PowerState, duration: Duration, effect: Effect = .smooth, mode: PowerMode? = nil)
 
-	///This method is used to save current state of smart LED in persistent memory
+	/// This method is used to save current state of smart LED in persistent memory
 	case set_default
 
 	/// This method is used to change the brightness of a smart LED.
@@ -47,6 +47,25 @@ public enum DeviceCommand {
 	///   - duration: Specifies the total time of the gradual changing. The minimum support duration is 30 milliseconds. Default value .milliseconds(500)
 	case set_hsv(hue: Int, sat: Int, effect: Effect = .smooth, duration: Duration = .milliseconds(500))
 
+	/// This method is used to toggle the smart LED.
+	/// This method is defined because sometimes user may just want to flip the state without knowing the current state.
+	case toggle
+
+	/// This method is used to start a timer job on the smart LED.
+	/// - Parameters:
+	///   - type: Currently can only be 0. (means power off)
+	///   - value: Target the length of the timer. (in minutes)
+	case cron_add(type: Int = 0, value: Int)
+
+	/// This method is used to retrieve the setting of the current cron job of the specified type.
+	/// - Parameters:
+	///   - type: Currently can only be 0. (means power off)
+	case cron_get(type: Int = 0)
+
+	/// This method is used to stop the specified cron job.
+	/// - Parameters:
+	///   - type: Currently can only be 0. (means power off)
+	case cron_del(type: Int = 0)
 
 	public var data: Data {
 		guard
@@ -75,6 +94,10 @@ public enum DeviceCommand {
 		case .set_rgb: return "set_rgb"
 		case .set_ct_abx: return "set_ct_abx"
 		case .set_hsv: return "set_hsv"
+		case .toggle: return "toggle"
+		case .cron_add: return "cron_add"
+		case .cron_get: return "cron_get"
+		case .cron_del: return "cron_del"
 		}
 	}
 
@@ -83,7 +106,7 @@ public enum DeviceCommand {
 		case let .set_power(state, duration, effect, mode):
 			var temp: [Any] = [state.rawValue, effect.rawValue, duration.value]
 			return temp.optionalAppend(mode?.rawValue)
-		case .set_default:
+		case .set_default, .toggle:
 			return []
 		case let .set_bright(brightness, effect, duration):
 			return [brightness, effect.rawValue, duration.value]
@@ -95,6 +118,10 @@ public enum DeviceCommand {
 			return [ct, effect.rawValue, duration.value]
 		case let .set_hsv(hue, sat, effect, duration):
 			return [hue, sat, effect.rawValue, duration.value]
+		case let .cron_add(type, value):
+			return [type, value]
+		case let .cron_get(type), let .cron_del(type):
+			return [type]
 		}
 	}
 }
