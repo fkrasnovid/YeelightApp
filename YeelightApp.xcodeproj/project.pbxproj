@@ -29,6 +29,7 @@
 		781C7B6D27AAEC20008E1534 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B6C27AAEC20008E1534 /* Mode.swift */; };
 		781C7B6F27AAEC3E008E1534 /* PowerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B6E27AAEC3E008E1534 /* PowerState.swift */; };
 		781C7B7127AAEC75008E1534 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7027AAEC75008E1534 /* Array+.swift */; };
+		781C7B7327ABC3AB008E1534 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7227ABC3AB008E1534 /* ColorPalette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +70,7 @@
 		781C7B6C27AAEC20008E1534 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		781C7B6E27AAEC3E008E1534 /* PowerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerState.swift; sourceTree = "<group>"; };
 		781C7B7027AAEC75008E1534 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		781C7B7227ABC3AB008E1534 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				7802BD2C27A426F200AAF413 /* ViewController.swift */,
 				7802BD5B27A8585900AAF413 /* DiscoverDevicesViewController.swift */,
 				7802BD6027A85DB700AAF413 /* DeviceViewController.swift */,
+				781C7B7227ABC3AB008E1534 /* ColorPalette.swift */,
 				781C7B6027AAB859008E1534 /* Command */,
 				7802BD5027A447B700AAF413 /* Models */,
 				7802BD3E27A4276300AAF413 /* Service */,
@@ -252,6 +255,7 @@
 				7802BD2D27A426F200AAF413 /* ViewController.swift in Sources */,
 				7802BD5A27A83F9C00AAF413 /* DeviceViewModel.swift in Sources */,
 				781C7B6D27AAEC20008E1534 /* Mode.swift in Sources */,
+				781C7B7327ABC3AB008E1534 /* ColorPalette.swift in Sources */,
 				781C7B7127AAEC75008E1534 /* Array+.swift in Sources */,
 				7802BD2927A426F200AAF413 /* AppDelegate.swift in Sources */,
 				7802BD5C27A8585900AAF413 /* DiscoverDevicesViewController.swift in Sources */,
