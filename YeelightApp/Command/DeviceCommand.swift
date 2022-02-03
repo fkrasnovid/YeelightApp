@@ -81,6 +81,21 @@ public enum DeviceCommand {
 	///   - port: Target post value(Optional). Default value nil
 	case set_music(state: MusicState, host: String? = nil, port: Int? = nil)
 
+	/// This method is used to adjust the brightness by specified percentage within specified duration.
+	///   - percentage: Target percentage to be adjusted. It's range is -100 to 100.
+	///   - duration: Specifies the total time of the gradual changing. The minimum support duration is 30 milliseconds. Default value .milliseconds(500)
+	case adjust_bright(percentage: Int, duration: Duration = .milliseconds(500))
+
+	/// This method is used to adjust the color temperature by specified percentage within specified duration.
+	///   - percentage: Target percentage to be adjusted. It's range is -100 to 100.
+	///   - duration: Specifies the total time of the gradual changing. The minimum support duration is 30 milliseconds. Default value .milliseconds(500)
+	case adjust_ct(percentage: Int, duration: Duration = .milliseconds(500))
+
+	/// This method is used to adjust the color within specified duration.
+	///   - percentage: Target percentage to be adjusted. It's range is -100 to 100.
+	///   - duration: Specifies the total time of the gradual changing. The minimum support duration is 30 milliseconds. Default value .milliseconds(500)
+	case adjust_color(percentage: Int, duration: Duration = .milliseconds(500))
+
 	public var data: Data {
 		guard
 			let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted),
@@ -114,6 +129,9 @@ public enum DeviceCommand {
 		case .cron_del: return "cron_del"
 		case .set_adjust: return "set_adjust"
 		case .set_music: return "set_music"
+		case .adjust_bright: return "adjust_bright"
+		case .adjust_ct: return "adjust_ct"
+		case .adjust_color: return "adjust_color"
 		}
 	}
 
@@ -144,6 +162,8 @@ public enum DeviceCommand {
 			var temp: [Any] = [state.rawValue]
 			if let host = host, let port = port { temp.append(contentsOf: [host, port]) }
 			return temp
+		case let .adjust_bright(percentage, duration), let .adjust_ct(percentage, duration), let .adjust_color(percentage, duration):
+			return [percentage, duration.value]
 		}
 	}
 }
