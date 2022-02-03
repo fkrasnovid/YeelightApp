@@ -74,6 +74,13 @@ public enum DeviceCommand {
 	///   - property: Target property to adjust.
 	case set_adjust(action: AdjustAction, property: AdjustProperty)
 
+	/// This method is used to start or stop music mode on a device.
+	/// - Parameters:
+	///   - state: Target state value.
+	///   - host: Target host value(Optional). Default value nil
+	///   - port: Target post value(Optional). Default value nil
+	case set_music(state: MusicState, host: String? = nil, port: Int? = nil)
+
 	public var data: Data {
 		guard
 			let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted),
@@ -106,6 +113,7 @@ public enum DeviceCommand {
 		case .cron_get: return "cron_get"
 		case .cron_del: return "cron_del"
 		case .set_adjust: return "set_adjust"
+		case .set_music: return "set_music"
 		}
 	}
 
@@ -132,6 +140,10 @@ public enum DeviceCommand {
 			return [type]
 		case let .set_adjust(action, property):
 			return [action.rawValue, property.rawValue]
+		case let .set_music(state, host, port):
+			var temp: [Any] = [state.rawValue]
+			if let host = host, let port = port { temp.append(contentsOf: [host, port]) }
+			return temp
 		}
 	}
 }
