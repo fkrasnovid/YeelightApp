@@ -1,5 +1,7 @@
 import Foundation
 
+/// Commands for interacting with devices
+/// Ref: https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf
 public enum DeviceCommand {
 
 	/// This method is used to switch on or off the smart LED
@@ -103,9 +105,20 @@ public enum DeviceCommand {
 	/// This method is used to stop a running color flow.
 	case stop_cf
 
-	public var data: Data {
+	/// This method is used to retrieve current property of smart LED.
+	/// The parameter is a list of property names and the response contains a list of corresponding property values.
+	/// If the requested property name is not recognized by smart LED, then a empty string value ("") will be returned.
+	/// WARNING: Properties are returned in the same order as in the array, String values
+	/// request [.power, .bright, .name] return "{\"id\":1,\"result\":[\"on\",\"100\",\"name_device\"]}\r\n"
+	case get_properties(_ properties: [DeviceProperty])
+
+	/// This method is used to set the smart LED directly to specified state.
+	/// If the smart LED is off, then it will turn on the smart LED firstly and then apply the specified command.
+	case set_scene(_ scene: Scene)
+
+	public func data(with deviceIdentifiable: DeviceIdentifiable) -> Data {
 		guard
-			let jsonData = try? JSONSerialization.data(withJSONObject: body, options: .prettyPrinted),
+			let jsonData = try? JSONSerialization.data(withJSONObject: body(with: deviceIdentifiable), options: .prettyPrinted),
 			let stringData = String(data: jsonData, encoding: .utf8)?.appending("\r\n"),
 			let sendableData = stringData.data(using: .utf8)
 		else { assertionFailure("can't create sendableData"); return Data() }
@@ -113,9 +126,9 @@ public enum DeviceCommand {
 		return sendableData
 	}
 
-	private var body: [String: Any] {
+	private func body(with deviceIdentifiable: DeviceIdentifiable) -> [String: Any] {
 		[
-			"id": 1,
+			"id": deviceIdentifiable.identifier,
 			"method": method,
 			"params": params
 		]
@@ -141,6 +154,8 @@ public enum DeviceCommand {
 		case .adjust_color: return "adjust_color"
 		case .start_cf: return "start_cf"
 		case .stop_cf: return "stop_cf"
+		case .get_properties: return "get_prop"
+		case .set_scene: return "set_scene"
 		}
 	}
 
@@ -148,7 +163,8 @@ public enum DeviceCommand {
 		switch self {
 		case let .set_power(state, duration, effect, mode):
 			var temp: [Any] = [state.rawValue, effect.rawValue, duration.value]
-			return temp.optionalAppend(mode?.rawValue)
+			if let mode = mode?.rawValue { temp.append(mode) }
+			return temp
 		case .set_default, .toggle, .stop_cf:
 			return []
 		case let .set_bright(brightness, effect, duration):
@@ -175,6 +191,10 @@ public enum DeviceCommand {
 			return [percentage, duration.value]
 		case let .start_cf(state, action, exp):
 			return [state.value, action.rawValue, exp.toFormat]
+		case let .get_properties(properties):
+			return properties.map(\.rawValue)
+		case let .set_scene(scene):
+			return scene.parameters
 		}
 	}
 }

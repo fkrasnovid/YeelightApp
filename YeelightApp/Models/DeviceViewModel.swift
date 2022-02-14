@@ -7,15 +7,17 @@
 
 import Combine
 
-public final class DeviceViewModel {
-	@Published public var bright: Int
-	@Published public var name: String
-	@Published public var sat: Int
-	@Published public var ct: Int
-	@Published public var hue: Int
-	@Published public var power: Bool
-	@Published public var rgb: Int
-	@Published public var color_mode: Int
+public final class DeviceViewModel: DeviceIdentifiable {
+	public var identifier: Int = 25
+
+	@Published public private(set)var bright: Int
+	@Published public private(set)var name: String
+	@Published public private(set)var sat: Int
+	@Published public private(set)var ct: Int
+	@Published public private(set)var hue: Int
+	@Published public private(set)var power: Bool
+	@Published public private(set)var rgb: Int
+	@Published public private(set)var color_mode: Int
 
 	public let host: String
 	public let port: UInt16
@@ -59,29 +61,45 @@ extension DeviceViewModel {
 		}
 	}
 
+	func get_prop() {
+		receiver.sendCommand(.get_properties([.power, .bright, .name]), identifiable: self)
+	}
+
 	func togglePower() {
 		let nextState: PowerState = power ? .off : .on
-		receiver.sendCommand(.set_power(state: nextState, duration: .milliseconds(600)))
+		receiver.sendCommand(.set_power(state: nextState, duration: .milliseconds(600)), identifiable: self)
 		power = nextState == .on ? true : false
 	}
 
 	func setBright(_ bright: Int) {
-		receiver.sendCommand(.set_bright(brightness: bright))
+		receiver.sendCommand(.set_bright(brightness: bright), identifiable: self)
 		self.bright = bright
 	}
 
 	func setName(_ name: String) {
-		receiver.sendCommand(.set_name(name: name))
+		receiver.sendCommand(.set_name(name: name), identifiable: self)
 		self.name = name
 	}
 
 	func setRgb(_ rgb: Int) {
-		receiver.sendCommand(.set_rgb(rgb: rgb))
+		receiver.sendCommand(.set_rgb(rgb: rgb), identifiable: self)
 		self.rgb = rgb
 	}
 
 	func setCt(_ ct: Int) {
-		receiver.sendCommand(.set_ct_abx(ct: ct))
+		receiver.sendCommand(.set_ct_abx(ct: ct), identifiable: self)
 		self.ct = ct
+	}
+
+	func setCron() {
+		receiver.sendCommand(.cron_add(value: 15), identifiable: self)
+	}
+
+	func getCron() {
+		receiver.sendCommand(.cron_get(), identifiable: self)
+	}
+
+	func deleteCron() {
+		receiver.sendCommand(.cron_del(), identifiable: self)
 	}
 }

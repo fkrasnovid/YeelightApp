@@ -28,7 +28,6 @@
 		781C7B6927AAB916008E1534 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B6827AAB916008E1534 /* Duration.swift */; };
 		781C7B6D27AAEC20008E1534 /* PowerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B6C27AAEC20008E1534 /* PowerMode.swift */; };
 		781C7B6F27AAEC3E008E1534 /* PowerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B6E27AAEC3E008E1534 /* PowerState.swift */; };
-		781C7B7127AAEC75008E1534 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7027AAEC75008E1534 /* Array+.swift */; };
 		781C7B7327ABC3AB008E1534 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7227ABC3AB008E1534 /* ColorPalette.swift */; };
 		781C7B7527AC06B4008E1534 /* AdjustAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7427AC06B4008E1534 /* AdjustAction.swift */; };
 		781C7B7727AC082C008E1534 /* AdjustProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7627AC082C008E1534 /* AdjustProperty.swift */; };
@@ -36,6 +35,10 @@
 		781C7B7B27AC287B008E1534 /* ColorFlowState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7A27AC287B008E1534 /* ColorFlowState.swift */; };
 		781C7B7D27AC289A008E1534 /* ColorFlowAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7C27AC289A008E1534 /* ColorFlowAction.swift */; };
 		781C7B7F27AC28D3008E1534 /* ColorFlowExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B7E27AC28D3008E1534 /* ColorFlowExpression.swift */; };
+		781C7B8127B1624E008E1534 /* DeviceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C7B8027B1624E008E1534 /* DeviceCollectionViewCell.swift */; };
+		78E5B32727B2C1CA006AD208 /* DeviceProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5B32627B2C1CA006AD208 /* DeviceProperty.swift */; };
+		78E5B32927B2CBF3006AD208 /* DeviceIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5B32827B2CBF3006AD208 /* DeviceIdentifiable.swift */; };
+		78E5B32B27B2CEA0006AD208 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5B32A27B2CEA0006AD208 /* Scene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,7 +78,6 @@
 		781C7B6827AAB916008E1534 /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		781C7B6C27AAEC20008E1534 /* PowerMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerMode.swift; sourceTree = "<group>"; };
 		781C7B6E27AAEC3E008E1534 /* PowerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerState.swift; sourceTree = "<group>"; };
-		781C7B7027AAEC75008E1534 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		781C7B7227ABC3AB008E1534 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		781C7B7427AC06B4008E1534 /* AdjustAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustAction.swift; sourceTree = "<group>"; };
 		781C7B7627AC082C008E1534 /* AdjustProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustProperty.swift; sourceTree = "<group>"; };
@@ -83,6 +85,10 @@
 		781C7B7A27AC287B008E1534 /* ColorFlowState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFlowState.swift; sourceTree = "<group>"; };
 		781C7B7C27AC289A008E1534 /* ColorFlowAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFlowAction.swift; sourceTree = "<group>"; };
 		781C7B7E27AC28D3008E1534 /* ColorFlowExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFlowExpression.swift; sourceTree = "<group>"; };
+		781C7B8027B1624E008E1534 /* DeviceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCollectionViewCell.swift; sourceTree = "<group>"; };
+		78E5B32627B2C1CA006AD208 /* DeviceProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProperty.swift; sourceTree = "<group>"; };
+		78E5B32827B2CBF3006AD208 /* DeviceIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdentifiable.swift; sourceTree = "<group>"; };
+		78E5B32A27B2CEA0006AD208 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,7 @@
 				7802BD5B27A8585900AAF413 /* DiscoverDevicesViewController.swift */,
 				7802BD6027A85DB700AAF413 /* DeviceViewController.swift */,
 				781C7B7227ABC3AB008E1534 /* ColorPalette.swift */,
+				781C7B8027B1624E008E1534 /* DeviceCollectionViewCell.swift */,
 				781C7B6027AAB859008E1534 /* Command */,
 				7802BD5027A447B700AAF413 /* Models */,
 				7802BD3E27A4276300AAF413 /* Service */,
@@ -166,6 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				781C7B6127AAB86F008E1534 /* DeviceCommand.swift */,
+				78E5B32827B2CBF3006AD208 /* DeviceIdentifiable.swift */,
+				78E5B32627B2C1CA006AD208 /* DeviceProperty.swift */,
+				78E5B32A27B2CEA0006AD208 /* Scene.swift */,
 				781C7B7E27AC28D3008E1534 /* ColorFlowExpression.swift */,
 				781C7B7A27AC287B008E1534 /* ColorFlowState.swift */,
 				781C7B7C27AC289A008E1534 /* ColorFlowAction.swift */,
@@ -176,17 +186,8 @@
 				781C7B6C27AAEC20008E1534 /* PowerMode.swift */,
 				781C7B6E27AAEC3E008E1534 /* PowerState.swift */,
 				781C7B7827AC0C32008E1534 /* MusicState.swift */,
-				781C7B6527AAB8F4008E1534 /* Extensions */,
 			);
 			path = Command;
-			sourceTree = "<group>";
-		};
-		781C7B6527AAB8F4008E1534 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				781C7B7027AAEC75008E1534 /* Array+.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,19 +267,22 @@
 				7802BD4D27A4470000AAF413 /* ServiceFactory.swift in Sources */,
 				781C7B7927AC0C32008E1534 /* MusicState.swift in Sources */,
 				781C7B7B27AC287B008E1534 /* ColorFlowState.swift in Sources */,
+				78E5B32B27B2CEA0006AD208 /* Scene.swift in Sources */,
+				78E5B32727B2C1CA006AD208 /* DeviceProperty.swift in Sources */,
 				781C7B6227AAB86F008E1534 /* DeviceCommand.swift in Sources */,
+				78E5B32927B2CBF3006AD208 /* DeviceIdentifiable.swift in Sources */,
 				7802BD4F27A4478D00AAF413 /* DiscoverYeelightDevicesService.swift in Sources */,
 				781C7B7D27AC289A008E1534 /* ColorFlowAction.swift in Sources */,
 				781C7B7F27AC28D3008E1534 /* ColorFlowExpression.swift in Sources */,
 				781C7B6927AAB916008E1534 /* Duration.swift in Sources */,
 				7802BD3D27A4273600AAF413 /* CommandReceiverService.swift in Sources */,
 				7802BD5227A44A0800AAF413 /* Device.swift in Sources */,
+				781C7B8127B1624E008E1534 /* DeviceCollectionViewCell.swift in Sources */,
 				781C7B6F27AAEC3E008E1534 /* PowerState.swift in Sources */,
 				7802BD2D27A426F200AAF413 /* ViewController.swift in Sources */,
 				7802BD5A27A83F9C00AAF413 /* DeviceViewModel.swift in Sources */,
 				781C7B6D27AAEC20008E1534 /* PowerMode.swift in Sources */,
 				781C7B7327ABC3AB008E1534 /* ColorPalette.swift in Sources */,
-				781C7B7127AAEC75008E1534 /* Array+.swift in Sources */,
 				781C7B7727AC082C008E1534 /* AdjustProperty.swift in Sources */,
 				7802BD2927A426F200AAF413 /* AppDelegate.swift in Sources */,
 				781C7B7527AC06B4008E1534 /* AdjustAction.swift in Sources */,
@@ -360,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -415,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

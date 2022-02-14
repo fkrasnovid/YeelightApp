@@ -12,7 +12,22 @@ final class DiscoverDevicesPresenter {
 
 }
 
+final class DeviceCollectionViewFlowLayout: UICollectionViewFlowLayout {
+	override init() {
+		super.init()
+		self.scrollDirection = .vertical
+		self.itemSize = CGSize(width: UIScreen.main.bounds.width - 30, height: 120)
+		self.sectionInset = .init(top: .zero, left: 15, bottom: 15, right: 15)
+		self.minimumLineSpacing = 15
+		self.minimumInteritemSpacing = .zero
+	}
+
+	required init?(coder: NSCoder) { fatalError() }
+}
+
 final class DiscoverDevicesViewController: UIViewController {
+
+	private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: DeviceCollectionViewFlowLayout())
 	private let tableView = UITableView()
 	private let service = ServiceFactory().discoverService
 	var deviceViewModels: [DeviceViewModel] = []
@@ -20,12 +35,22 @@ final class DiscoverDevicesViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		title = "Список девайсов"
-		tableView.delegate = self
-		tableView.dataSource = self
-		tableView.register(DeviceTableViewCell.self, forCellReuseIdentifier: "DeviceTableViewCell")
+		collectionView.delegate = self
+		collectionView.dataSource = self
+		//collectionView.collectionViewLayout = DeviceCollectionViewFlowLayout()
 
-		tableView
+
+
+		view.backgroundColor = .backgroundApp
+		title = "Список девайсов"
+		collectionView.backgroundColor = .clear
+//		tableView.backgroundColor = .clear
+//		tableView.delegate = self
+//		tableView.dataSource = self
+//		tableView.register(DeviceTableViewCell.self, forCellReuseIdentifier: "DeviceTableViewCell")
+		collectionView.register(DeviceCollectionViewCell.self, forCellWithReuseIdentifier: "DeviceCollectionViewCell")
+
+		collectionView
 			.add(to: view)
 			.pinContainer()
 
@@ -33,6 +58,7 @@ final class DiscoverDevicesViewController: UIViewController {
 		service.didDiscoverDevice = { [unowned self] device in
 			if self.deviceViewModels.contains(where: { $0.id == device.id }) { return }
 			let viewModel = DeviceViewModel(with: device, receiver: CommandReceiverFactory().commandReceiver)
+			viewModel.connect()
 			deviceViewModels.append(viewModel)
 		}
 
@@ -48,13 +74,30 @@ final class DiscoverDevicesViewController: UIViewController {
 			loading = true
 			print("Загрузка")
 			DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-				self.tableView.reloadData()
+				self.collectionView.reloadData()
 				self.loading.toggle()
 				print("Закончил загрузку")
 			}
 		}
 	}
 }
+extension DiscoverDevicesViewController: UICollectionViewDelegate {
+
+}
+
+extension DiscoverDevicesViewController: UICollectionViewDataSource {
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return deviceViewModels.count
+	}
+
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let cell: DeviceCollectionViewCell = collectionView.dequeue(for: indexPath)
+		cell.configure(with: deviceViewModels[indexPath.row])
+		return cell
+	}
+
+}
+
 
 extension DiscoverDevicesViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -79,6 +122,12 @@ extension DiscoverDevicesViewController: UITableViewDataSource {
 extension UITableView {
 	func dequeue<T: UITableViewCell>(for indexPath: IndexPath) -> T {
 		return dequeueReusableCell(withIdentifier: "\(T.self)", for: indexPath) as! T
+	}
+}
+
+extension UICollectionView {
+	func dequeue<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
+		return dequeueReusableCell(withReuseIdentifier: "\(T.self)", for: indexPath) as! T
 	}
 }
 
