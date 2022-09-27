@@ -16,7 +16,7 @@ final class DeviceCollectionViewFlowLayout: UICollectionViewFlowLayout {
 	override init() {
 		super.init()
 		self.scrollDirection = .vertical
-		self.itemSize = CGSize(width: UIScreen.main.bounds.width - 30, height: 120)
+		self.itemSize = CGSize(width: UIScreen.main.bounds.width - 30, height: 500)
 		self.sectionInset = .init(top: .zero, left: 15, bottom: 15, right: 15)
 		self.minimumLineSpacing = 15
 		self.minimumInteritemSpacing = .zero

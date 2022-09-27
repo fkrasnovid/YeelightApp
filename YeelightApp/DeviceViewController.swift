@@ -68,10 +68,10 @@ final class DevicesViewController: UIViewController {
 		slider2.addTarget(self, action: #selector(sliderAction2), for: .valueChanged)
 		stack.addArrangedSubview(slider2)
 
-		let cmd: DeviceCommand = .start_cf(state: .infinite, action: .stay, exp: [
-			.color(123, brightness: 100, duration: .milliseconds(500)),
-			.ct(7500, brightness: 80, duration: .seconds(3))
-		])
+        let cmd = DeviceCommand.start_cf(.init(state: .infinite, action: .stay, exp: [
+            .color(rgb: 123, brightness: 100, duration: .milliseconds(500)),
+            .ct(ct: 7500, brightness: 80, duration: .seconds(3))
+        ]))
 
 	}
 

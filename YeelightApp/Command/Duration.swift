@@ -1,5 +1,3 @@
-import Foundation
-
 public enum Duration {
 	case milliseconds(Int)
 	case seconds(Int)

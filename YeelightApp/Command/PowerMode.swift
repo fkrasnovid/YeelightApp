@@ -1,5 +1,3 @@
-import Foundation
-
 public enum PowerMode: Int {
 	/// Normal turn on operation (default value).
 	case normal = 0

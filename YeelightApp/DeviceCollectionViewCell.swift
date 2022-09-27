@@ -4,7 +4,9 @@ import Combine
 
 final class DeviceSwitch: UISwitch {
 
-	var valueChanged: ((Bool) -> Void)?
+    var valueChanged: ((Bool) -> Void)? {
+        didSet { print("Set HERE") }
+    }
 
 
 	init() {
@@ -21,6 +23,7 @@ final class DeviceSwitch: UISwitch {
 
 final class SwitchContainer: UIView {
 	let deviceSwitch = DeviceSwitch()
+
 	private let shevronImage = UIImageView(image: UIImage(named: "shevron_20pt"))
 
 	init() {
@@ -125,23 +128,67 @@ extension DeviceCollectionViewCell: Configurable {
 		imageContainer.setImage(UIImage(named: "bulb_24pt"))
 		imageContainer.imageView.tintColor = .systemOrange
 		imageContainer.backgroundColor = .systemOrange.withAlphaComponent(0.3)
-		switchContainer.deviceSwitch.isOn = item.power
+		switchContainer.deviceSwitch.isOn = false//item.power
+
+        let duration: Int = 60000 / 120
+        let cf = ColorFlow(state: .infinite, action: .recover, exp: [
+            .color(rgb: 0xE0F7FA, brightness: 100, duration: .seconds(1)),
+            .color(rgb: 0xB2EBF2, brightness: 100, duration: .seconds(1)),
+            .color(rgb: 0x80DEEA, brightness: 100, duration: .seconds(1)),
+            .color(rgb: 0x4DD0E1, brightness: 100, duration: .seconds(1)),
+            .color(rgb: 0x26C6DA, brightness: 100, duration: .seconds(1)),
+            .color(rgb: 0x00BCD4, brightness: 100, duration: .seconds(1)),
+            .color(rgb: 0x00ACC1, brightness: 100, duration: .seconds(1)),
+            .color(rgb: 0x0097A7, brightness: 100, duration: .seconds(1)),
+            .color(rgb: 0x00838F, brightness: 100, duration: .seconds(1)),
+            .color(rgb: 0x006064, brightness: 100, duration: .seconds(1))
+        ])
+
+        switchContainer.deviceSwitch.valueChanged = { [weak item] in
+            if $0 {
+                //item?.setRgb(0xFB8C00)//FB8C00 251,140,0
+                item?.setRgb(251 * 65536 + 150 * 256 + 0)
+
+                //item?.setCF(cf)
+            } else {
+                //item?.stopCF()
+            }
+            //item?.setPower($0 == true ? .on : .off)
+        }
+
+
 
 		brightnessView.valueChanged = { [weak item] _ in
 			//item?.setBright($0)
 			//item?.getCron()
 		}
 
-		switchContainer.deviceSwitch.valueChanged = { [weak item] _ in
-			//item?.connect()
-			// Optional("{\"id\":25,\"result\":[{\"type\": 0, \"delay\": 15, \"mix\": 0}]}\r\n")
-			// Optional("{\"id\":25,\"result\":[\"ok\"]}\r\n")
-			item?.deleteCron()
-			//item?.getCron()
-			//item?.togglePower()
-		}
-		
+//		switchContainer.deviceSwitch.valueChanged = { [weak item] _ in
+//			//item?.connect()
+//			// Optional("{\"id\":25,\"result\":[{\"type\": 0, \"delay\": 15, \"mix\": 0}]}\r\n")
+//			// Optional("{\"id\":25,\"result\":[\"ok\"]}\r\n")
+//			item?.deleteCron()
+//			//item?.getCron()
+//			//item?.togglePower()
+//		}
+
+
+
 	}
+
+    
+     /*
+
+
+
+
+
+
+
+
+
+
+      */
 }
 
 

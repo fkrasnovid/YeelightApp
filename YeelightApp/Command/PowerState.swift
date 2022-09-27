@@ -1,5 +1,3 @@
-import Foundation
-
 public enum PowerState: String {
 	case on
 	case off

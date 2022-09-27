@@ -3,11 +3,9 @@
 xcuserdata/
 
 # Carthage
-
-YeelightApp/Carthage/Checkouts
-YeelightApp/Carthage/Build
+Cartfile.resolved
+Carthage/
 
 # DS
 
 .DS_Store
-

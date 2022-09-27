@@ -71,10 +71,7 @@ public enum DeviceCommand {
 
 	/// This method is used to change brightness, CT or color of a smart LED without knowing the current value, it's main used by controllers.
 	/// When property is color, the action can only be circle, otherwise, it will be deemed as invalid request.
-	/// - Parameters:
-	///   - action: Target direction of the adjustment.
-	///   - property: Target property to adjust.
-	case set_adjust(action: AdjustAction, property: AdjustProperty)
+	case set_adjust(Adjust)
 
 	/// This method is used to start or stop music mode on a device.
 	/// - Parameters:
@@ -100,7 +97,7 @@ public enum DeviceCommand {
 
 	/// This method is used to start a color flow.
 	/// Color flow is a series of smart LED visible state changing. It can be brightness changing, color changing or color temperature changing.
-	case start_cf(state: ColorFlowState, action: ColorFlowAction, exp: ColorFlowExpression)
+	case start_cf(ColorFlow)
 
 	/// This method is used to stop a running color flow.
 	case stop_cf
@@ -110,11 +107,11 @@ public enum DeviceCommand {
 	/// If the requested property name is not recognized by smart LED, then a empty string value ("") will be returned.
 	/// WARNING: Properties are returned in the same order as in the array, String values
 	/// request [.power, .bright, .name] return "{\"id\":1,\"result\":[\"on\",\"100\",\"name_device\"]}\r\n"
-	case get_properties(_ properties: [DeviceProperty])
+	case get_properties([DeviceProperty])
 
 	/// This method is used to set the smart LED directly to specified state.
 	/// If the smart LED is off, then it will turn on the smart LED firstly and then apply the specified command.
-	case set_scene(_ scene: Scene)
+	case set_scene(scene: Scene)
 
 	public func data(with deviceIdentifiable: DeviceIdentifiable) -> Data {
 		guard
@@ -181,16 +178,16 @@ public enum DeviceCommand {
 			return [type, value]
 		case let .cron_get(type), let .cron_del(type):
 			return [type]
-		case let .set_adjust(action, property):
-			return [action.rawValue, property.rawValue]
+		case let .set_adjust(adjust):
+            return adjust.parameters
 		case let .set_music(state, host, port):
 			var temp: [Any] = [state.rawValue]
 			if let host = host, let port = port { temp.append(contentsOf: [host, port]) }
 			return temp
 		case let .adjust_bright(percentage, duration), let .adjust_ct(percentage, duration), let .adjust_color(percentage, duration):
 			return [percentage, duration.value]
-		case let .start_cf(state, action, exp):
-			return [state.value, action.rawValue, exp.toFormat]
+		case let .start_cf(flow):
+            return flow.parameters//[state.value, action.rawValue, exp.toFormat]
 		case let .get_properties(properties):
 			return properties.map(\.rawValue)
 		case let .set_scene(scene):

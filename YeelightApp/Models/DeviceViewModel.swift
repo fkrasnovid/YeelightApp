@@ -71,6 +71,11 @@ extension DeviceViewModel {
 		power = nextState == .on ? true : false
 	}
 
+    func setPower(_ nextState: PowerState) {
+        receiver.sendCommand(.set_power(state: nextState, duration: .milliseconds(600)), identifiable: self)
+        power = nextState == .on ? true : false
+    }
+
 	func setBright(_ bright: Int) {
 		receiver.sendCommand(.set_bright(brightness: bright), identifiable: self)
 		self.bright = bright
@@ -102,4 +107,12 @@ extension DeviceViewModel {
 	func deleteCron() {
 		receiver.sendCommand(.cron_del(), identifiable: self)
 	}
+
+    func setCF(_ flow: ColorFlow) {
+        receiver.sendCommand(.start_cf(flow), identifiable: self)
+    }
+
+    func stopCF() {
+        receiver.sendCommand(.stop_cf, identifiable: self)
+    }
 }

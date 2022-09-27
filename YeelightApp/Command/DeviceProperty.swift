@@ -1,5 +1,3 @@
-import Foundation
-
 public enum DeviceProperty: String, CaseIterable {
 	/// on: smart LED is turned on / off: smart LED is turned off
 	case power
